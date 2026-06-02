@@ -1025,19 +1025,33 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:1.6rem 
       </div>
       <div class="cr rev rd2">
         <p style="font-size:.62rem;font-family:var(--fM);color:rgba(200,192,170,.25);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.3rem">Send a Message</p>
-        <div class="cform">
-          <div class="cfrow"><div><label class="cflbl">Name</label><input class="cfi" type="text" placeholder="Your name"></div><div><label class="cflbl">Email</label><input class="cfi" type="email" placeholder="your@email.com"></div></div>
-          <div><label class="cflbl">Subject</label><input class="cfi" type="text" placeholder="WordPress, SEO, AI automation..."></div>
-          <div><label class="cflbl">Message</label><textarea class="cfta" placeholder="Tell me about your project..."></textarea></div>
-          <a href="mailto:mzeeshanmarshad70@gmail.com" class="bf" style="text-align:center">Send via Email ↗</a>
-        </div>
-      </div>
+        <form class="cform" action="https://formspree.io/f/mvzyevow" method="POST">
+  <div class="cfrow">
+    <div>
+      <label class="cflbl">Name</label>
+      <input class="cfi" type="text" name="name" placeholder="Your name" required>
+    </div>
+    <div>
+      <label class="cflbl">Email</label>
+      <input class="cfi" type="email" name="email" placeholder="your@email.com" required>
     </div>
   </div>
+  <div>
+    <label class="cflbl">Subject</label>
+    <input class="cfi" type="text" name="subject" placeholder="WordPress, SEO, AI automation...">
+  </div>
+  <div>
+    <label class="cflbl">Message</label>
+    <textarea class="cfta" name="message" placeholder="Tell me about your project..."></textarea>
+  </div>
+  <button type="submit" class="bf" style="text-align:center;width:100%;border:none;cursor:pointer">
+    Send Message ↗
+  </button>
+</form>
 </section>
 
 <footer>
-  <div class="flogo">ZA<span>.</span></div>
+  <div class="flogo">Zeeshan Arshad<span>.</span></div>
   <div class="fcopy">© 2026 Zeeshan Arshad. All rights reserved.</div>
   <div class="flinks">
     <a href="https://wa.me/923087663183" target="_blank">WhatsApp</a>
