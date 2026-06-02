@@ -1235,6 +1235,28 @@ window.addEventListener('scroll',()=>{
     navTick=false;
   });
 },{passive:true});
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<style>
+#scrollTop{
+  position:fixed;bottom:2rem;right:2rem;z-index:400;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--teal2);color:var(--ink);
+  border:none;cursor:pointer;font-size:1.2rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(10px);
+  transition:all .3s;box-shadow:0 4px 20px rgba(35,191,207,.35);
+}
+#scrollTop.show{opacity:1;transform:translateY(0)}
+#scrollTop:hover{background:var(--gold2);transform:translateY(-2px)}
+</style>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+},{passive:true});
+</script>
 </script>
 </body>
 </html>
