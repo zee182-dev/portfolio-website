@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+const wins = (await getCollection('seoWins')).sort((a,b)=>a.data.order-b.data.order);
+---
+<section id="seo">
+  <div class="wrap">
+    <span class="eyebrow">SEO results</span>
+    <h2 class="h-sec">Search work that moved real numbers</h2>
+    <p class="lead">A few outcomes from recent SEO engagements. Client names are kept private, results are real.</p>
+    <div class="grid g-3" style="margin-top:34px">
+      {wins.map(w => (
+        <article class="win">
+          <div class="metric">{w.data.metric}</div>
+          <div class="mlabel">{w.data.metricLabel}</div>
+          <h3>{w.data.title}</h3>
+          <p>{w.data.summary}</p>
+          <div class="chips">{w.data.skills.map(s => <span class="tag">{s}</span>)}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

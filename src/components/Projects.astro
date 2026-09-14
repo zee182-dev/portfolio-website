@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort((a,b)=>a.data.order-b.data.order);
+const groups = ['All','AI Automation','WordPress','Shopify','SaaS / App','SEO'];
+---
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow">Selected work</span>
+    <h2 class="h-sec">Projects & client builds</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      {groups.map((g,i) => (
+        <button data-filter={g} aria-pressed={i===0 ? 'true':'false'}>{g}</button>
+      ))}
+    </div>
+    <div class="grid g-3" id="pgrid">
+      {projects.map(async (p) => {
+        const { Content } = await p.render();
+        return (
+          <article class="pcard" data-group={p.data.group}>
+            <img class="thumb zoom" src={p.data.image} alt={`${p.data.title} — ${p.data.label}`} loading="lazy" width="600" height="360" />
+            <div class="body">
+              <span class="label">{p.data.label}</span>
+              <h3>{p.data.title}</h3>
+              <p><Content /></p>
+              {p.data.gallery.length > 0 && (
+                <div class="gal">
+                  {p.data.gallery.map((g,i) => (
+                    <img class="zoom" src={g} alt={`${p.data.title} — screenshot ${i+1}`} loading="lazy" />
+                  ))}
+                </div>
+              )}
+              <div class="chips">{p.data.tags.map(t => <span class="tag">{t}</span>)}</div>
+              {p.data.live && <a class="live" href={p.data.live} target="_blank" rel="noopener">Visit live site ↗</a>}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+<script>
+  const btns = document.querySelectorAll('.filters button');
+  const cards = document.querySelectorAll('#pgrid .pcard');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    const f = b.getAttribute('data-filter');
+    cards.forEach(c => {
+      const show = f === 'All' || c.getAttribute('data-group') === f;
+      (c as HTMLElement).style.display = show ? '' : 'none';
+    });
+  }));
+</script>

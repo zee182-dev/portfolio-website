@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+export interface Props { title?: string; description?: string; }
+const {
+  title = `${site.name} — ${site.role}`,
+  description = site.description,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImage = new URL('/photo.jpg', site.url).href;
+
+const personLd = {
+  '@context':'https://schema.org','@type':'Person',
+  name: site.name, jobTitle: site.role, url: site.url,
+  email: `mailto:${site.email}`, telephone: site.phone,
+  address:{'@type':'PostalAddress',addressLocality:'Islamabad',addressCountry:'PK'},
+  sameAs:[site.linkedin, site.github],
+  knowsAbout:['Technical SEO','AI SEO','AEO','GEO','WordPress','WooCommerce','Core Web Vitals','AI Automation'],
+};
+const siteLd = {
+  '@context':'https://schema.org','@type':'WebSite',
+  name: site.name, url: site.url, description,
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08090D" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090D'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='30' font-weight='700' fill='%2323BFCF'%3EZA%3C/text%3E%3C/svg%3E" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+</head>
+<body>
+  <slot />
+</body>
+</html>

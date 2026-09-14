@@ -1,0 +1,25 @@
+---
+---
+<div id="lightbox" class="lb" aria-hidden="true">
+  <button class="lb-close" aria-label="Close image">&times;</button>
+  <img id="lb-img" src="" alt="" />
+</div>
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+  function openLb(src: string, alt: string){
+    lbImg.src = src; lbImg.alt = alt || '';
+    lb!.classList.add('on'); lb!.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(){
+    lb!.classList.remove('on'); lb!.setAttribute('aria-hidden','true');
+    lbImg.src = ''; document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement).closest('.zoom') as HTMLImageElement | null;
+    if (t){ openLb(t.getAttribute('src')!, t.getAttribute('alt')!); return; }
+    if ((e.target as HTMLElement).closest('.lb-close') || e.target === lb){ closeLb(); }
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+</script>

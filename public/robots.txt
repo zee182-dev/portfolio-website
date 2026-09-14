@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zeeshan-arshad-portfolio.vercel.app/sitemap.xml
