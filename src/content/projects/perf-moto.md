@@ -6,6 +6,7 @@ label: "Technical SEO · On-page · E-commerce"
 image: "/projects/perf-moto-gsc.jpg"
 tags: ["Technical SEO", "On-page", "E-commerce SEO"]
 gallery: ["/projects/perf-moto-gsc-2.jpg"]
+live: "https://perfmoto.com/"
 featured: false
 ---
 
