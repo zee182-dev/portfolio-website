@@ -1,6 +1,6 @@
 export const site = {
   name: 'Zeeshan Arshad',
-  role: 'SEO Specialist & CMS/AI Developer',
+  role: 'Zeeshan Arshad — SEO Specialist & CMS/AI Developer',
   url: 'https://zeeshan-arshad-portfolio.vercel.app',
   location: 'Islamabad, Pakistan',
   email: 'mzeeshanmarshad70@gmail.com',
@@ -9,5 +9,5 @@ export const site = {
   linkedin: 'https://linkedin.com/in/zeeshan-seo',
   github: 'https://github.com/zee182-dev',
   description:
-    'SEO specialist and CMS/AI developer with 4+ years helping U.S. and global businesses rank in Google and get recommended by AI search. Technical SEO, AEO/GEO, WordPress, WooCommerce, and AI automation.',
+    '4+ years of technical SEO, AEO/GEO, and CMS development. I help U.S. and global businesses rank in search and get cited by AI models — then build the fast WordPress/Shopify sites to back it up.',
 };

@@ -1,0 +1,39 @@
+# Zeeshan Arshad
+
+> SEO specialist and CMS/AI developer with 4+ years helping U.S.-based
+> agencies and international clients rank in Google and get recommended
+> by AI search. Full-scope SEO (technical, on-page, content, AEO/GEO)
+> combined with hands-on development across WordPress, WooCommerce,
+> Shopify, Webflow, and Wix.
+
+## About
+- Name: Zeeshan Arshad
+- Role: SEO Specialist | CMS Developer | AI-Assisted Developer
+- Location: Rawalpindi, Pakistan (works U.S. hours; open to relocation)
+- Experience: 4+ years with U.S. agencies and global clients
+
+## Expertise
+- Technical SEO: Core Web Vitals, schema (JSON-LD), crawlability, migrations
+- AI Search Optimization (AEO/GEO): optimizing sites to be cited by ChatGPT,
+  Claude, Perplexity, and Google AI Overviews
+- On-page, content, and off-page SEO
+- CMS development: WordPress (custom themes & plugins), WooCommerce, Shopify,
+  Webflow, Wix
+- AI automation: Claude API, OpenAI, n8n, MCP servers, Pinecone (RAG)
+- Web development: Next.js, React, PHP, Node.js
+
+## Selected results
+- Earned AI-search recommendations (ChatGPT and Claude) for a client,
+  turning AI visibility into qualified leads
+- Achieved city-, state-, and nationwide SERP visibility for medical-billing
+  clients (AI Overviews, local packs, #1 organic)
+- Delivered zero-ranking-loss website and e-commerce migrations
+
+## Links
+- Portfolio: https://zeeshan-arshad-portfolio.vercel.app
+- LinkedIn: https://linkedin.com/in/zeeshan-seo
+- GitHub: https://github.com/zee182-dev
+- Email: mzeeshanmarshad70@gmail.com
+
+## Contact
+Available for SEO and development roles (freelance and full-time).
