@@ -1,0 +1,54 @@
+---
+const pills1 = ['WordPress','WooCommerce','Shopify','Custom PHP Plugins','Elementor Pro','Bricks Builder','WP-CLI','Next.js','React','Tailwind CSS'];
+const pills2 = ['Technical SEO','Core Web Vitals','GA4','Search Console','Ahrefs','SEMrush','Screaming Frog','n8n','Claude API','Pinecone (RAG)','MCP Servers','OpenAI API'];
+const cats = [
+  { icon:'🌐', title:'CMS & Dev', items:['WordPress','WooCommerce','Shopify','Elementor Pro','Bricks Builder','Divi'] },
+  { icon:'⚡', title:'Frontend', items:['Next.js / React','Tailwind CSS','TypeScript','JavaScript ES6+','HTML5 / CSS3','jQuery / AJAX'] },
+  { icon:'🤖', title:'AI & Automation', items:['n8n Workflows','Claude API','OpenAI API','Pinecone (RAG)','MCP Servers','LangChain'] },
+  { icon:'📈', title:'SEO & Analytics', items:['Technical SEO','Google Analytics 4','Search Console','Ahrefs / SEMrush','Screaming Frog','Rank Math / Yoast'] },
+  { icon:'🛠️', title:'Backend & DB', items:['PHP (Plugins/Themes)','Node.js','MySQL / PostgreSQL','REST API','Supabase','WP-CLI'] },
+  { icon:'🚀', title:'DevOps & Tools', items:['GitHub / Git','Vercel / Railway','Coolify','VS Code','Cloudflare CDN','Postman'] },
+  { icon:'🛡️', title:'Security & Perf', items:['Core Web Vitals','WP Rocket','Wordfence','Malware Removal','SSL / HTTPS','LiteSpeed Cache'] },
+  { icon:'💬', title:'Soft Skills', items:['U.S. Client Experience','Project Leadership','Team Mentorship','Remote Work','Agile / Sprints','Client Communication'] },
+];
+const stats = [
+  { n:'4+', l:'Years Experience' },
+  { n:'50+', l:'Websites Delivered' },
+  { n:'15+', l:'Healthcare U.S Sites' },
+  { n:'AI', l:'Ranked in AI Search' },
+];
+---
+<section id="stack" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">What I work with</span>
+    <h2 class="h-sec">Expertise &amp; stack</h2>
+  </div>
+
+  <div class="pill-mq" aria-hidden="true">
+    <div class="pill-track">{[...pills1, ...pills1].map(p => <span class="pill">{p}</span>)}</div>
+  </div>
+  <div class="pill-mq" aria-hidden="true">
+    <div class="pill-track rev">{[...pills2, ...pills2].map(p => <span class="pill">{p}</span>)}</div>
+  </div>
+
+  <div class="wrap">
+    <div class="grid g-4" style="margin-top:34px">
+      {cats.map(c => (
+        <article class="stackcard">
+          <div class="sc-ico">{c.icon}</div>
+          <h3>{c.title}</h3>
+          <ul>{c.items.map(i => <li>{i}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+
+    <div class="grid g-4" style="margin-top:22px">
+      {stats.map(s => (
+        <div class="stat">
+          <div class="stat-n">{s.n}</div>
+          <div class="stat-l">{s.l}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

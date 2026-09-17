@@ -1,0 +1,23 @@
+---
+const services = [
+  { t:'AI Search Optimization (AEO / GEO)', d:'Structuring content and entities so AI Overviews, ChatGPT, Perplexity, and Gemini can understand, trust, and recommend your site.', tags:['AEO','GEO','Entity SEO','Schema'] },
+  { t:'Technical & On-Page SEO', d:'Audits, Core Web Vitals, crawlability, JSON-LD schema, internal linking, and content structured around real search intent.', tags:['Audits','Core Web Vitals','Schema','GA4'] },
+  { t:'CMS & WordPress Development', d:'Custom WordPress themes, WooCommerce stores, Shopify builds, and plugins — engineered for speed, security, and conversions.', tags:['WordPress','WooCommerce','PHP','Plugins'] },
+  { t:'AI Automation Systems', d:'Autonomous support agents, SEO pipelines, RAG systems, and MCP servers using n8n, Claude API, and Pinecone.', tags:['n8n','Claude API','Pinecone','MCP'] },
+];
+---
+<section id="services" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2 class="h-sec">What I help with</h2>
+    <div class="grid g-2" style="margin-top:30px">
+      {services.map(s => (
+        <article class="card">
+          <h3>{s.t}</h3>
+          <p>{s.d}</p>
+          <div class="chips">{s.tags.map(t => <span class="tag">{t}</span>)}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

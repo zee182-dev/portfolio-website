@@ -1,0 +1,27 @@
+---
+const jobs = [
+  { role:'SEO Specialist', co:'Strat IQ Digital', meta:'Jan 2026 — Present · Rawalpindi, PK',
+    d:'Data-driven SEO across a multi-client portfolio: technical audits, keyword research, Core Web Vitals, AI-search visibility, and GA4/Ahrefs/SEMrush reporting.' },
+  { role:'Freelance SEO, Dev & AI Specialist', co:'Self-Employed', meta:'Nov 2024 — Present · Remote / Worldwide',
+    d:'WordPress, WooCommerce, and Next.js builds with AI-assisted workflows, plus n8n automation, AI agents, custom plugins, and MCP servers for global clients.' },
+  { role:'WordPress Dev & SEO Specialist', co:'Resilient MBS', meta:'Nov 2024 — Jan 2026 · U.S.-Based Client',
+    d:'Led WordPress development and SEO for 15+ healthcare sites: custom PHP themes and plugins, WooCommerce, technical SEO, malware recovery, CRO, and team leadership.' },
+  { role:'WordPress Developer', co:'Loop Technologies', meta:'Apr 2023 — Aug 2024 · U.S. Agency',
+    d:'Responsive WordPress and WooCommerce builds for U.S. clients, focused on site speed, Core Web Vitals, and API integrations.' },
+];
+---
+<section id="experience" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Experience</span>
+    <h2 class="h-sec">Work history</h2>
+    <div class="exp" style="margin-top:26px">
+      {jobs.map(j => (
+        <div>
+          <div class="role-t">{j.role} · <span class="co">{j.co}</span></div>
+          <div class="meta">{j.meta}</div>
+          <p>{j.d}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
