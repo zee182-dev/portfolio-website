@@ -17,29 +17,37 @@ const personLd = {
   sameAs:[site.linkedin, site.github],
   knowsAbout:['Technical SEO','AI SEO','AEO','GEO','WordPress','WooCommerce','Core Web Vitals','AI Automation'],
 };
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Zeeshan Arshad — Zeeshan Arshad — SEO Specialist & CMS/AI Developer",
-  "author": {
-    "@type": "Person",
-    "name": "AUTHOR NAME"
-  },
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
-  "image": "https://zeeshan-arshad-portfolio.vercel.app/photo.jpg",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://zeeshan-arshad-portfolio.vercel.app/"
-  }
-}
-</script>
-
 const siteLd = {
   '@context':'https://schema.org','@type':'WebSite',
   name: site.name, url: site.url, description,
+};
+const profileLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": "2026-09-17",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Zeeshan Arshad",
+    "jobTitle": "SEO Specialist & CMS/AI Developer",
+    "description": "SEO specialist and CMS/AI developer helping businesses rank in Google and get recommended by AI search.",
+    "url": "https://zeeshan-arshad-portfolio.vercel.app",
+    "image": "https://zeeshan-arshad-portfolio.vercel.app/photo.jpg",
+    "email": "mailto:mzeeshanmarshad70@gmail.com",
+    "telephone": "+92 308-7663183",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rawalpindi",
+      "addressCountry": "PK"
+    },
+    "knowsAbout": [
+      "Technical SEO", "AI Search Optimization", "AEO", "GEO",
+      "WordPress", "WooCommerce", "Shopify", "Core Web Vitals", "AI Automation"
+    ],
+    "sameAs": [
+      "https://linkedin.com/in/zeeshan-seo",
+      "https://github.com/zee182-dev"
+    ]
+  }
 };
 ---
 <!doctype html>
@@ -72,6 +80,7 @@ const siteLd = {
 
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(profileLd)} />
   <meta name="google-site-verification" content="8GIzVmCPkmjY1GNwgiOttX-CFdWX5CMCHmvI8N1cSNU" />
 </head>
 <body>
